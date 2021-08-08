@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Input, Button, Table, Space, Modal } from "antd";
+import { Input, Button, Table, Space, Modal, notification } from "antd";
 
 import "../Dashboard/Dashboard.css";
 
@@ -29,8 +29,10 @@ const Dashboard = () => {
 
   const additem = () => {
     if (!name) {
-      alert("Name can not blank!!");
-    } else if (name) {
+      notification.open({
+        message: "Name can not blank!!!",
+      });
+    } else if (name && !toggleSubmit) {
       setItems(
         items.map((elem) => {
           if (elem.id === isEditItem) {
@@ -45,7 +47,9 @@ const Dashboard = () => {
     }
 
     if (!email) {
-      alert("Name can not blank!!");
+      notification.open({
+        message: "Email can not blank!!!",
+      });
     } else if (email && !toggleSubmit) {
       setItems(
         items.map((elem) => {
@@ -60,7 +64,10 @@ const Dashboard = () => {
       setIsEditItem(null);
     }
     if (!number) {
-      alert("Number can not Blank!!");
+      // alert("Number can not Blank!!");
+      notification.open({
+        message: "Number can not blank!!!",
+      });
     } else if (number && !toggleSubmit) {
       setItems(
         items.map((elem) => {
