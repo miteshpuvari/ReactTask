@@ -1,0 +1,18 @@
+.child-div {
+  align-items: center;
+  justify-content: center;
+}
+.addItems {
+  flex-direction: row;
+  margin: auto;
+}
+.input {
+  width: 20%;
+  margin: 0.5%;
+}
+.ant-table-content {
+  width: 65%;
+  align-items: center;
+  margin: 0 auto;
+  margin-right: 140px;
+}
